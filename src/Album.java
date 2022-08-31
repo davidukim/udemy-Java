@@ -48,7 +48,9 @@ public class Album {
         // 2) 트랙넘버에 해당하는 음악을 플레이리스트에 추가한다 (add)
 
         // 3) 리턴 트루..
-
+        if (songs.get(trackNumber) == null){
+            return false;
+        }
     }
 
     public boolean addToPlayList(String title, LinkedList<Song> playList){
