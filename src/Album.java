@@ -23,7 +23,7 @@ public class Album {
         }
     }
 
-    public Song findSong(String title){
+    private Song findSong(String title){
         Iterator songsIterator = songs.iterator();
         if (songs.size() == 0){
             return null;
