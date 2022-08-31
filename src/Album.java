@@ -48,8 +48,11 @@ public class Album {
         // 2) 트랙넘버에 해당하는 음악을 플레이리스트에 추가한다 (add)
 
         // 3) 리턴 트루..
-        if (songs.get(trackNumber) == null){
+        if (songs.get(trackNumber-1) == null){
             return false;
+        } else {
+            playList.add(songs.get(trackNumber-1));
+            return true;
         }
     }
 
@@ -62,5 +65,15 @@ public class Album {
         // 2) 타이 해당하는 음악을 플레이리스트에 추가한다 (add)
 
         // 3) 리턴 트루
+        if (songs.size() == 0) return false; // if album has no songs, fails to add a song to the list
+        int i = 0;
+        while ( i < songs.size()){
+            if (songs.get(i).getTitle() == title){
+                playList.add(songs.get(i));
+                return true;
+            }
+            i++;
+        }
+        return false;
     }
 }
