@@ -31,10 +31,13 @@ public class Album {
         }
 
         while (songsIterator.hasNext()){
-            if ( (songs.get(i).title).equals(title) ){
+            if ( songs.get(i) != null && (songs.get(i).title).equals(title) && !songs.get(i).title.equals("") ){
                 return songs.get(i);
             }
             i++;
+            if (i >= songs.size()){
+                break;
+            }
         }
         return null; // returns null if song was not found
     }
@@ -49,7 +52,8 @@ public class Album {
         // 2) 트랙넘버에 해당하는 음악을 플레이리스트에 추가한다 (add)
 
         // 3) 리턴 트루..
-        if (songs.get(trackNumber-1) == null){
+
+        if (trackNumber-1 > songs.size() || songs.get(trackNumber-1) == null){
             return false;
         } else {
             playList.add(songs.get(trackNumber-1));

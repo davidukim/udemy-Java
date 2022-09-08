@@ -45,5 +45,7 @@ public class Main {
         albums.get(1).addToPlayList(3, playList);
         albums.get(1).addToPlayList(2, playList);
         albums.get(1).addToPlayList(24, playList);  // There is no track 24
+
+        System.out.println("Program successfully ran!");
     }
 }
