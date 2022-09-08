@@ -24,14 +24,14 @@ public class Album {
     }
 
     private Song findSong(String title){
+        int i = 0;
         Iterator songsIterator = songs.iterator();
         if (songs.size() == 0){
             return null;
         }
 
         while (songsIterator.hasNext()){
-            int i = 0;
-            if ( songs.get(i).title == title ){
+            if ( (songs.get(i).title).equals(title) ){
                 return songs.get(i);
             }
             i++;
@@ -69,7 +69,7 @@ public class Album {
         if (songs.size() == 0) return false; // if album has no songs, fails to add a song to the list
         int i = 0;
         while ( i < songs.size()){
-            if (songs.get(i).getTitle() == title){
+            if ( (songs.get(i).getTitle()).equals(title) ){
                 playList.add(songs.get(i));
                 return true;
             }
