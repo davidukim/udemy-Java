@@ -10,7 +10,7 @@ public class Album {
     public Album(String name, String artist){
         this.name = name;
         this.artist = artist;
-        List<Song> songs = new LinkedList<Song>();
+        this.songs = new LinkedList<Song>();
     }
 
     public boolean addSong(String title, double duration){
@@ -34,6 +34,7 @@ public class Album {
             if ( songs.get(i).title == title ){
                 return songs.get(i);
             }
+            i++;
         }
         return null; // returns null if song was not found
     }
